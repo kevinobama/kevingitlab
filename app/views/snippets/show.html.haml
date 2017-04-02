@@ -1,0 +1,9 @@
+- page_title @snippet.title, "Snippets"
+
+= render 'shared/snippets/header'
+
+%article.file-holder.snippet-file-content
+  = render 'shared/snippets/blob', raw_path: raw_snippet_path(@snippet), download_path: download_snippet_path(@snippet)
+
+.row-content-block.top-block.content-component-block
+  = render 'award_emoji/awards_block', awardable: @snippet, inline: true

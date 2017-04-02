@@ -1,0 +1,12 @@
+- page_title @snippet.title, "Snippets"
+
+= render 'shared/snippets/header'
+
+.project-snippets
+  %article.file-holder.snippet-file-content
+    = render 'shared/snippets/blob', raw_path: raw_namespace_project_snippet_path(@project.namespace, @project, @snippet)
+
+  .row-content-block.top-block.content-component-block
+    = render 'award_emoji/awards_block', awardable: @snippet, inline: true
+
+  #notes= render "projects/notes/notes_with_form"
